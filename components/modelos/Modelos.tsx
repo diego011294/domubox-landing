@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
-export default function Modelos() {
+
+export default function Modelos({ openModal }: { openModal: () => void }) {
     const [activeModelIndex, setActiveModelIndex] = useState(0);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const models = [
@@ -48,10 +49,10 @@ export default function Modelos() {
 
   const activeModel = models[activeModelIndex];
   return (
-    <div className='w-full xl:max-w-[1720px] px-5 sm:px-6 md:px-10 lg:px-[125px] py-20 mx-auto'>
+    <div className='max-w-[1300px] py-20 mx-auto px-4'>
       <div className='flex lg:flex-row items-start lg:items-center flex-col justify-between w-full gap-10'>
         <h2 className='text-4xl font-bold font-dmsans text-tipo w-full'>
-            Encuentra tu modelo <br/> <span className='font-playfair text-secundario italic'>perfecto</span>
+            Encuentra tu modelo <br/> <span className='font-playfair text-secundario italic'>ideal</span>
         </h2>
         <p className='text-md text-tipoclara w-full lg:w-[900px]'>
             Explora nuestra colección de casas modulares y elige el diseño que mejor se adapta a tu estilo de vida. Cada modelo está pensado para ofrecerte confort, funcionalidad y una estética moderna, con la posibilidad de personalizar cada detalle. Descubre hogares eficientes, sostenibles y diseñados para crecer contigo.
@@ -65,7 +66,7 @@ export default function Modelos() {
           <Button
             key={model.name}
             variant={activeModelIndex === idx ? "default" : "outline"}
-            className="border-brand"
+            className="border-brand cursor-pointer"
             onClick={() => {
               setActiveModelIndex(idx);
               setSelectedImageIndex(0); // reset de la imagen seleccionada
@@ -77,10 +78,10 @@ export default function Modelos() {
       </div>
 
       {/* Galería + Acordeón */}
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-10">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-16">
         {/* Galería */}
-        <div className="flex flex-col-reverse lg:flex-row gap-4">
-          <div className="flex lg:flex-col gap-2">
+        <div className="flex flex-col-reverse xl:flex-row gap-4">
+          <div className="flex xl:flex-col gap-2">
             {activeModel.images.map((img, idx) => (
               <img
                 key={img}
@@ -97,7 +98,7 @@ export default function Modelos() {
             <img
               src={activeModel.images[selectedImageIndex]}
               alt={activeModel.name}
-              className="w-full h-[400px] object-cover rounded-md"
+              className="w-full h-[200px] md:h-[400px] object-cover rounded-md"
             />
           </div>
         </div>
@@ -113,8 +114,11 @@ export default function Modelos() {
             ))}
           </Accordion>
           {/* Btns de acciones */}
-          <div className="flex flex-col gap-4 mt-10">
-            <Button variant="default" className="text-md">
+          <div className="flex flex-col lg:flex-row gap-4 mt-10">
+            <Button
+            onClick={openModal} 
+            variant="default" 
+            className="text-md">
               ¡Estoy interesado!
             </Button>
             <Button variant="secondary" className="bg-[#f0f0f0] text-md text-tipoclara">

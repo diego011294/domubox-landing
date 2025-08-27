@@ -9,8 +9,8 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full z-50 bg-[#F6F4F0]">
-      <div className="w-full lg:px-[125px] px-10 py-2 mx-auto flex justify-between items-center border-b-1 border-separator">
+    <nav className="w-full z-50 bg-[#F6F4F0] border-b-1 border-separator">
+      <div className="max-w-[1300px] px-4 py-2 mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">
             <img src="img/logo-domubox.svg" alt="logo domubox" className="w-20 md:w-full" />
@@ -46,7 +46,7 @@ export default function Navbar() {
       {/* Menú móvil con animación */}
       <div
         className={`
-          text-lg md:hidden bg-[#F6F4F0] shadow-md absolute w-full px-10 py-5 transition-all duration-300 ease-in-out
+          text-lg md:hidden bg-[#F6F4F0] shadow-md absolute z-20 w-full px-10 py-5 transition-all duration-300 ease-in-out
           ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}
         `}
       >
