@@ -49,13 +49,13 @@ export default function Navbar() {
       <div className="max-w-[1300px] px-4 py-2 mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <a href="/">
+          <Link href="/">
             <img
               src="img/logo-domubox.svg"
               alt="logo domubox"
               className="w-20 md:w-full"
             />
-          </a>
+          </Link>
         </div>
 
         {/* Links desktop */}
