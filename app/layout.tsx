@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "DOMUBOX IMPORT",
   description:
     "Descubre nuestras casas modulares de diseño moderno y eficiente. Soluciones habitacionales rápidas, sostenibles y personalizables que se adaptan a tu estilo de vida y presupuesto. Calidad, confort y rapidez en cada proyecto.",
+  verification: {
+    google: "VMBDKNiK4nHs5yNxzHQ2E0AN_4QSOr1o9Le5Ut3-cPg",
+  },
 };
 
 export default function RootLayout({
