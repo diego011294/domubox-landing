@@ -99,7 +99,7 @@ export default function MaintenancePage() {
           Muy pronto... <br/> el futuro de la <span className="font-playfair italic text-secundario">vivienda</span>
         </h1>
         <p className="text text-lg md:text-xl text-gray-600 mb-6 text-center flex flex-col md:flex-row items-center gap-2">
-          Estamos detallando los últimos detalles:{" "}
+          Dando forma a los últimos detalles:{" "}
           <span className="changing-word font-bold">{words[wordIndex]}</span>
         </p>
 
