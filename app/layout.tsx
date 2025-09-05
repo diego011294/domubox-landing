@@ -3,6 +3,7 @@ import { Lexend, Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import MaintenancePage from "./maintenance/page";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -20,15 +21,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const maintenance = true;
+
   return (
     <html lang="es" className={`${dmSans.className}`}>
       <head>
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body className="bg-white">
-        <Navbar />
-        {children}
-        <Footer />
+        {maintenance ? (
+          <MaintenancePage />
+        ) : (
+          <>
+            <Navbar />
+            {children}
+            <Footer />
+          </>
+        )}
       </body>
     </html>
   );
