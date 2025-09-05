@@ -86,27 +86,27 @@ export default function ModalExtensiones({
         {/* Cards horizontales */}
         <div className="flex flex-col md:flex-row gap-6 justify-center">
           <div className="bg-white rounded-xl shadow-md p-6 flex-1 text-center">
-            <h3 className="text-xl font-bold mb-2 text-tipo">Extensión Básica</h3>
+            <img src="img/extension1.webp" alt="Extension terraza" className="w-64 md:w-full h-auto object-cover mx-auto" />
+            <h3 className="text-xl font-bold mb-2 text-tipo">Terraza</h3>
             <p className="text-sm text-gray-600 mb-4">
               Una solución sencilla para ampliar tu espacio.
             </p>
-            <Button>Seleccionar</Button>
           </div>
 
           <div className="bg-white rounded-xl shadow-md p-6 flex-1 text-center">
-            <h3 className="text-xl font-bold mb-2 text-tipo">Extensión Estándar</h3>
+            <img src="img/extension2.webp" alt="Extension techo terraza" className="w-64 md:w-full h-auto object-cover mx-auto" />
+            <h3 className="text-xl font-bold mb-2 text-tipo">Techo terraza</h3>
             <p className="text-sm text-gray-600 mb-4">
-              El equilibrio perfecto entre diseño y confort.
+              El equilibrio perfecto con tu terraza para cubrirte los dias de lluvia.
             </p>
-            <Button>Seleccionar</Button>
           </div>
 
           <div className="bg-white rounded-xl shadow-md p-6 flex-1 text-center">
-            <h3 className="text-xl font-bold mb-2 text-tipo">Extensión Premium</h3>
+            <img src="img/extension3.webp" alt="Extension techo" className="w-64 md:w-full h-auto object-cover mx-auto" />
+            <h3 className="text-xl font-bold mb-2 text-tipo">Techo</h3>
             <p className="text-sm text-gray-600 mb-4">
-              Todo incluido para un hogar de ensueño.
+              Tejado a dos aguas que facilita el desagüe y evita acumulaciones de agua o suciedad.
             </p>
-            <Button>Seleccionar</Button>
           </div>
         </div>
       </div>
