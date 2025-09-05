@@ -77,7 +77,7 @@ export default function ModalExtensiones({
       <div
         ref={modalRef}
         className="bg-[radial-gradient(circle,_#FAF4E8_0%,_#F6F4F0_43%,_#DDD2BE_100%)]
-                   rounded-t-2xl w-full md:max-w-5xl p-6 shadow-xl cursor-grab active:cursor-grabbing"
+                   rounded-t-2xl w-full md:max-w-5xl p-6 shadow-xl cursor-grab active:cursor-grabbing max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Barra de drag visual */}
