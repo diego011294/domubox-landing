@@ -102,7 +102,7 @@ export default function Header({ openModal }: { openModal: () => void }) {
       className="h-screen bg-cover bg-center relative overflow-hidden"
       style={{
         backgroundImage: `
-          url('img/fondo-header.png'),
+          url('img/fondo-header.webp'),
           radial-gradient(circle, #FAF4E8 0%, #F6F4F0 43%, #DDD2BE 100%)
         `,
         backgroundBlendMode: "overlay",
@@ -114,12 +114,12 @@ export default function Header({ openModal }: { openModal: () => void }) {
       >
         {/* Top */}
         <div className="flex flex-col lg:flex-row gap-5 items-center justify-center w-full md:w-auto">
-          <h2 className="text-5xl md:text-7xl lg:text-9xl font-dmsans font-bold text-center text-tipo tracking-tighter">
+          <h2 className="text-5xl md:text-7xl lg:text-9xl font-dmsans font-bold text-center text-tipo tracking-tighter opacity-0">
             El futuro
           </h2>
           <video
             ref={videoRef}
-            className="w-full z-10 h-32 rounded-full lg:w-80 lg:h-32 sm:w-80 object-cover shadow-lg lg:rounded-[9999px]"
+            className="w-full z-10 h-32 rounded-full lg:w-80 lg:h-32 sm:w-80 object-cover shadow-lg lg:rounded-[9999px] opacity-0"
             src="/video/video-montaje.mp4"
             autoPlay
             loop
@@ -130,17 +130,18 @@ export default function Header({ openModal }: { openModal: () => void }) {
 
         {/* Bottom */}
         <div className="flex flex-col items-center mt-10">
-          <h1 className="text-5xl md:text-7xl lg:text-9xl font-dmsans font-bold text-center text-tipo tracking-tighter">
+          <h1 className="text-5xl md:text-7xl lg:text-9xl font-dmsans font-bold text-center text-tipo tracking-tighter opacity-0">
             de la vivienda,{" "}
             <span className="font-playfair italic text-secundario tracking-tighter">
               hoy
             </span>
           </h1>
-          <p className="text-2xl md:text-3xl text-center font-dmsans text-tipo tracking-tighter my-4">
+          <p className="text-2xl md:text-3xl text-center font-dmsans text-tipo tracking-tighter my-4 opacity-0">
             Diseña, adapta y disfruta
           </p>
           <div className="block lg:hidden">
             <Button
+            className="opacity-0"
             onClick={openModal}>
               Solicita presupuesto
               </Button>

@@ -2,18 +2,20 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { useRevealTexts } from "@/hooks/useRevealTexts";
 
 
-export default function Modelos({ openModal }: { openModal: () => void }) {
+export default function Modelos({ openModal, openExtensiones }: { openModal: () => void, openExtensiones: () => void }) {
+    const containerRef = useRevealTexts<HTMLDivElement>("h2");
     const [activeModelIndex, setActiveModelIndex] = useState(0);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const models = [
   {
     name: "Modelo A",
     images: [
-      "/img/casa-modeloa-1.jpg",
-      "/img/casa-modeloa-2.jpg",
-      "/img/casa-modeloa-3.jpg",
+      "/img/casa-modeloa-1.webp",
+      "/img/casa-modeloa-2.webp",
+      "/img/casa-modeloa-3.webp",
     ],
     accordion: [
       { title: "Descripción", content: "Modelo A, casa moderna con 3 habitaciones..." },
@@ -23,9 +25,9 @@ export default function Modelos({ openModal }: { openModal: () => void }) {
   {
     name: "Modelo B",
     images: [
-      "/img/casa-modelob-1.jpg",
-      "/img/casa-modelob-2.jpg",
-      "/img/casa-modelob-3.jpg",
+      "/img/casa-modelob-1.webp",
+      "/img/casa-modelob-2.webp",
+      "/img/casa-modelob-3.webp",
     ],
     accordion: [
       { title: "Descripción", content: "Modelo B, casa minimalista con 2 habitaciones..." },
@@ -35,9 +37,9 @@ export default function Modelos({ openModal }: { openModal: () => void }) {
   {
     name: "Modelo C",
     images: [
-      "/img/casa-modeloc-1.jpg",
-      "/img/casa-modeloc-2.jpg",
-      "/img/casa-modeloc-3.jpg",
+      "/img/casa-modeloc-1.webp",
+      "/img/casa-modeloc-2.webp",
+      "/img/casa-modeloc-3.webp",
     ],
     accordion: [
       { title: "Descripción", content: "Modelo C, casa familiar con 4 habitaciones..." },
@@ -49,10 +51,10 @@ export default function Modelos({ openModal }: { openModal: () => void }) {
 
   const activeModel = models[activeModelIndex];
   return (
-    <div className='max-w-[1300px] py-20 mx-auto px-4'>
-      <div className='flex lg:flex-row items-start lg:items-center flex-col justify-between w-full gap-10'>
-        <h2 className='text-4xl font-bold font-dmsans text-tipo w-full'>
-            Encuentra tu modelo <br/> <span className='font-playfair text-secundario italic'>ideal</span>
+    <div  className='max-w-[1300px] py-20 mx-auto px-4'>
+      <div ref={containerRef} className='flex lg:flex-row items-start lg:items-center flex-col justify-between w-full gap-10'>
+        <h2 className='text-4xl lg:text-5xl font-bold font-dmsans text-tipo w-full opacity-0'>
+            Encuentra tu<br/> <span className='font-playfair text-secundario italic'>modelo ideal</span>
         </h2>
         <p className='text-md text-tipoclara w-full lg:w-[900px]'>
             Explora nuestra colección de casas modulares y elige el diseño que mejor se adapta a tu estilo de vida. Cada modelo está pensado para ofrecerte confort, funcionalidad y una estética moderna, con la posibilidad de personalizar cada detalle. Descubre hogares eficientes, sostenibles y diseñados para crecer contigo.
@@ -119,9 +121,11 @@ export default function Modelos({ openModal }: { openModal: () => void }) {
             onClick={openModal} 
             variant="default" 
             className="text-md">
-              ¡Estoy interesado!
+              ¡Me interesa!
             </Button>
-            <Button variant="secondary" className="bg-[#f0f0f0] text-md text-tipoclara">
+            <Button 
+            onClick={openExtensiones} 
+            variant="secondary" className="bg-[#f0f0f0] text-md text-tipoclara">
               Ver extensiones opcionales
             </Button>
           </div>

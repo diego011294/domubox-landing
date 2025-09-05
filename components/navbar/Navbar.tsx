@@ -1,38 +1,84 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
+import gsap from "gsap";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navRef = useRef<HTMLElement | null>(null);
+  const lastScroll = useRef(0);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScroll.current && currentScroll > 80) {
+        // scroll hacia abajo → ocultar
+        gsap.to(nav, {
+          y: "-100%",
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      } else {
+        // scroll hacia arriba → mostrar
+        gsap.to(nav, {
+          y: "0%",
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      }
+
+      lastScroll.current = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <nav className="w-full z-50 bg-[#F6F4F0] border-b-1 border-separator">
+    <nav
+      ref={navRef}
+      className="w-full fixed top-0 left-0 z-50 bg-[#F6F4F0] border-b border-separator"
+    >
       <div className="max-w-[1300px] px-4 py-2 mx-auto flex justify-between items-center">
+        {/* Logo */}
         <div className="flex items-center">
-          <Link href="/">
-            <img src="img/logo-domubox.svg" alt="logo domubox" className="w-20 md:w-full" />
-          </Link>
+          <a href="/">
+            <img
+              src="img/logo-domubox.svg"
+              alt="logo domubox"
+              className="w-20 md:w-full"
+            />
+          </a>
         </div>
+
+        {/* Links desktop */}
         <div className="hidden text-lg md:flex space-x-6 text-tipo">
-          <Link href="#modelos" className=" hover:text-secundario">
+          <a href="#modelos" className="hover:text-secundario">
             Modelos
-          </Link>
-          <Link href="#galeria" className=" hover:text-secundario">
+          </a>
+          <a href="#galeria" className="hover:text-secundario">
             Galería
-          </Link>
-          <Link href="#materiales" className=" hover:text-secundario">
+          </a>
+          <a href="#materiales" className="hover:text-secundario">
             Materiales
-          </Link>
-          <Link href="#por-que" className="hover:text-secundario">
+          </a>
+          <a href="#whyus" className="hover:text-secundario">
             Por qué elegirnos
-          </Link>
+          </a>
         </div>
-        <div className="hidden lg:block">
-          <Button>Solicita presupuesto</Button>
+
+        {/* CTA */}
+        <div className="hidden lg:block bg-[#4f5516] text-white rounded-sm shadow-xs hover:bg-[#272A0B] text-lg cursor-pointer px-5 py-1">
+          <a href="#formpresupuesto">Solicita presupuesto</a>
         </div>
+
+        {/* Botón mobile */}
         <div className="md:hidden">
           <button
             onClick={() => setOpen(!open)}
@@ -43,37 +89,29 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú móvil con animación */}
+      {/* Menú móvil */}
       <div
         className={`
           text-lg md:hidden bg-[#F6F4F0] shadow-md absolute z-20 w-full px-10 py-5 transition-all duration-300 ease-in-out
-          ${open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}
+          ${
+            open
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 -translate-y-5 pointer-events-none"
+          }
         `}
       >
-        <Link
-          href="#modelos"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
+        <a onClick={() => setOpen(false)} href="#modelos" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Modelos
-        </Link>
-        <Link
-          href="#galeria"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
+        </a>
+        <a onClick={() => setOpen(false)} href="#galeria" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Galería
-        </Link>
-        <Link
-          href="#materiales"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
+        </a>
+        <a onClick={() => setOpen(false)} href="#materiales" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Materiales
-        </Link>
-        <Link
-          href="#por-que"
-          className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-        >
+        </a>
+        <a onClick={() => setOpen(false)} href="#whyus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Por qué elegirnos
-        </Link>
+        </a>
       </div>
     </nav>
   );

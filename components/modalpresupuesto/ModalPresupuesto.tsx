@@ -52,7 +52,7 @@ export default function ModalPresupuesto({ isOpen, onClose }: ModalPresupuestoPr
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-50 bg-black/60 flex items-end md:items-center justify-center px-4"
+      className="fixed inset-0 z-50 bg-black/60 flex items-end md:items-center justify-center"
       onClick={closeModal}
     >
       <div
@@ -63,7 +63,7 @@ export default function ModalPresupuesto({ isOpen, onClose }: ModalPresupuestoPr
         {/* Imagen izquierda solo desktop */}
         <div className="hidden md:block md:w-[600px]">
           <img
-            src="img/galeria1.jpg"
+            src="img/img-promologo.webp"
             alt="Presupuesto"
             className="w-full h-full object-cover"
           />
