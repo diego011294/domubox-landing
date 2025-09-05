@@ -88,7 +88,7 @@ export default function ModalExtensiones({
         {/* Contenido scrollable */}
         <div className="overflow-y-auto flex-1">
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center">
+            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-4">
               <img
                 src="img/extension1.webp"
                 alt="Extension terraza"
@@ -102,7 +102,7 @@ export default function ModalExtensiones({
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center">
+            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-4">
               <img
                 src="img/extension2.webp"
                 alt="Extension terraza"
@@ -119,7 +119,7 @@ export default function ModalExtensiones({
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center">
+            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-4">
               <img
                 src="img/extension3.webp"
                 alt="Extension terraza"
