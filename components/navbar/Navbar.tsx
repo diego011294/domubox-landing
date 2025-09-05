@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
 import Link from "next/link";
@@ -41,6 +40,12 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 👇 función para manejar el scroll suave
+  const handleScrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setOpen(false);
+  };
+
   return (
     <nav
       ref={navRef}
@@ -60,23 +65,26 @@ export default function Navbar() {
 
         {/* Links desktop */}
         <div className="hidden text-lg md:flex space-x-6 text-tipo">
-          <Link scroll={false} href="#modelos" className="hover:text-secundario">
+          <button onClick={() => handleScrollTo("modelos")} className="hover:text-secundario cursor-pointer">
             Modelos
-          </Link>
-          <Link scroll={false} href="#galeria" className="hover:text-secundario">
+          </button>
+          <button onClick={() => handleScrollTo("galeria")} className="hover:text-secundario cursor-pointer">
             Galería
-          </Link>
-          <Link scroll={false} href="#materiales" className="hover:text-secundario">
+          </button>
+          <button onClick={() => handleScrollTo("materiales")} className="hover:text-secundario cursor-pointer">
             Materiales
-          </Link>
-          <Link scroll={false} href="#whyus" className="hover:text-secundario">
+          </button>
+          <button onClick={() => handleScrollTo("whyus")} className="hover:text-secundario cursor-pointer">
             Por qué elegirnos
-          </Link>
+          </button>
         </div>
 
         {/* CTA */}
-        <div className="hidden lg:block bg-[#4f5516] text-white rounded-sm shadow-xs hover:bg-[#272A0B] text-lg cursor-pointer px-5 py-1">
-          <a href="#formpresupuesto">Solicita presupuesto</a>
+        <div
+          onClick={() => handleScrollTo("formpresupuesto")}
+          className="hidden lg:block bg-[#4f5516] text-white rounded-sm shadow-xs hover:bg-[#272A0B] text-lg cursor-pointer px-5 py-1"
+        >
+          Solicita presupuesto
         </div>
 
         {/* Botón mobile */}
@@ -101,18 +109,18 @@ export default function Navbar() {
           }
         `}
       >
-        <Link scroll={false} onClick={() => setOpen(false)} href="#modelos" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        <button onClick={() => handleScrollTo("modelos")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
           Modelos
-        </Link>
-        <Link scroll={false} onClick={() => setOpen(false)} href="#galeria" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </button>
+        <button onClick={() => handleScrollTo("galeria")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
           Galería
-        </Link>
-        <Link scroll={false} onClick={() => setOpen(false)} href="#materiales" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </button>
+        <button onClick={() => handleScrollTo("materiales")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
           Materiales
-        </Link>
-        <Link scroll={false} onClick={() => setOpen(false)} href="#whyus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </button>
+        <button onClick={() => handleScrollTo("whyus")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
           Por qué elegirnos
-        </Link>
+        </button>
       </div>
     </nav>
   );
