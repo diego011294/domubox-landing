@@ -21,7 +21,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const maintenance = true;
+  const maintenance = false; // 👈 activar para mostrar el mensaje de mantenimiento
 
   return (
     <html lang="es" className={`${dmSans.className}`}>
