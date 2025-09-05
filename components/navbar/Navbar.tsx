@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import gsap from "gsap";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -59,18 +60,18 @@ export default function Navbar() {
 
         {/* Links desktop */}
         <div className="hidden text-lg md:flex space-x-6 text-tipo">
-          <a href="#modelos" className="hover:text-secundario">
+          <Link scroll={false} href="#modelos" className="hover:text-secundario">
             Modelos
-          </a>
-          <a href="#galeria" className="hover:text-secundario">
+          </Link>
+          <Link scroll={false} href="#galeria" className="hover:text-secundario">
             Galería
-          </a>
-          <a href="#materiales" className="hover:text-secundario">
+          </Link>
+          <Link scroll={false} href="#materiales" className="hover:text-secundario">
             Materiales
-          </a>
-          <a href="#whyus" className="hover:text-secundario">
+          </Link>
+          <Link scroll={false} href="#whyus" className="hover:text-secundario">
             Por qué elegirnos
-          </a>
+          </Link>
         </div>
 
         {/* CTA */}
@@ -100,18 +101,18 @@ export default function Navbar() {
           }
         `}
       >
-        <a onClick={() => setOpen(false)} href="#modelos" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        <Link scroll={false} onClick={() => setOpen(false)} href="#modelos" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Modelos
-        </a>
-        <a onClick={() => setOpen(false)} href="#galeria" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </Link>
+        <Link scroll={false} onClick={() => setOpen(false)} href="#galeria" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Galería
-        </a>
-        <a onClick={() => setOpen(false)} href="#materiales" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </Link>
+        <Link scroll={false} onClick={() => setOpen(false)} href="#materiales" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Materiales
-        </a>
-        <a onClick={() => setOpen(false)} href="#whyus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
+        </Link>
+        <Link scroll={false} onClick={() => setOpen(false)} href="#whyus" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">
           Por qué elegirnos
-        </a>
+        </Link>
       </div>
     </nav>
   );
