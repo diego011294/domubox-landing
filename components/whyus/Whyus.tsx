@@ -54,7 +54,8 @@ export default function Whyus() {
         {/* CONTENEDOR CARDS */}
         <div
           ref={cardsRef}
-          className="flex lg:justify-center items-stretch gap-10 mt-10 py-10 overflow-x-auto lg:overflow-hidden scrollbar-hide snap-x snap-mandatory"
+          className="flex lg:justify-center items-stretch gap-10 mt-10 py-10 overflow-x-auto lg:overflow-hidden scrollbar-hide snap-x snap-mandatory overflow-y-hidden
+"
         >
           {/* CARD 1 */}
           <div className="card flex flex-col gap-6 min-w-[280px] lg:min-w-0 flex-1 h-96 snap-start border-r border-separator pr-5">
