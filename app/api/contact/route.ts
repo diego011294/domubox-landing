@@ -11,7 +11,8 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "DOMUBOX <onboarding@resend.dev>",
-      to: ["domuboximport@gmail.com", "drochart.info@gmail.com"], // envia a varios destinatarios
+      to: "domuboximport@gmail.com",       // destinatario principal
+      cc: "drochart.info@gmail.com",       // copia
       subject: `Consulta de ${name}`,
       html: `
         <h2>Nuevo mensaje desde la web</h2>
