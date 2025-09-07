@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "DOMUBOX <onboarding@resend.dev>",     
-      to: "drochart.info@gmail.com",       
+      to: "domuboximport@gmail.com",       
       subject: `Consulta de ${name}`,
       html: `
         <h2>Nuevo mensaje desde la web</h2>
