@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const data = await resend.emails.send({
       from: "DOMUBOX <onboarding@resend.dev>",
-      to: ["domuboximport@gmail.com", "drochart.info@gmail.com"],
+      to: ["domuboximport@gmail.com", "drochart.info@gmail.com"], // envia a varios destinatarios
       subject: `Consulta de ${name}`,
       html: `
         <h2>Nuevo mensaje desde la web</h2>
@@ -22,11 +22,19 @@ export async function POST(req: Request) {
       `,
     });
 
-    // si Resend responde con éxito, enviamos 200
-    return NextResponse.json({ success: true, message: "Correo enviado", data }, { status: 200 });
-  } catch (error: any) {
+    return NextResponse.json(
+      { success: true, message: "Correo enviado", data },
+      { status: 200 }
+    );
+  } catch (error: unknown) {
     console.error(error);
-    // si hay error, devolvemos 500
-    return NextResponse.json({ success: false, message: "Error al enviar correo", error: error.message || error }, { status: 500 });
+
+    const message =
+      error instanceof Error ? error.message : "Error desconocido";
+
+    return NextResponse.json(
+      { success: false, message: "Error al enviar correo", error: message },
+      { status: 500 }
+    );
   }
 }
