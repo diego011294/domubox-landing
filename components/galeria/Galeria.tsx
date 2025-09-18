@@ -5,12 +5,12 @@ import Image from "next/image";
 import gsap from "gsap";
 
 const images = [
-  "/img/galeria1.webp",
-  "/img/galeria2.webp",
-  "/img/galeria3.webp",
-  "/img/galeria4.webp",
-  "/img/galeria5.webp",
-  "/img/galeria6.webp",
+  "/img/capsula1.webp",
+  "/img/contenedor2.webp",
+  "/img/apple3.webp",
+  "/img/apple4.webp",
+  "/img/contenedor1.webp",
+  "/img/capsula3.webp",
 ];
 
 export default function SimpleGaleria() {
