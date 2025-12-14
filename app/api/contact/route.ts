@@ -6,12 +6,17 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
+    console.log("🚀 API /api/contact LLAMADA");
+
     const body = await req.json();
     const { name, email, phone, message } = body;
 
+    console.log("📩 DATOS RECIBIDOS:", { name, email, phone });
+    console.log("📨 DESTINO EMAIL:", "info@domuboximport.com");
+
     const data = await resend.emails.send({
       from: "DOMUBOX <info@domuboximport.com>",
-      to: "info@domuboximport.com",      
+      to: "info@domuboximport.com",
       subject: `Consulta de ${name}`,
       html: `
         <h2>Nuevo mensaje desde la web</h2>
@@ -22,12 +27,14 @@ export async function POST(req: Request) {
       `,
     });
 
+    console.log("✅ EMAIL ENVIADO POR RESEND", data);
+
     return NextResponse.json(
       { success: true, message: "Correo enviado", data },
       { status: 200 }
     );
   } catch (error: unknown) {
-    console.error(error);
+    console.error("❌ ERROR EN /api/contact:", error);
 
     const message =
       error instanceof Error ? error.message : "Error desconocido";
