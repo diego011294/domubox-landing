@@ -2,12 +2,14 @@
 import FormPresupuesto from "@/components/formpresupuesto/FormPresupuesto";
 import Galeria from "@/components/galeria/Galeria";
 import Header from "@/components/header/Header";
-import Materiales from "@/components/materiales/Materiales";
 import ModalPresupuesto from "@/components/modalpresupuesto/ModalPresupuesto";
 import ModalExtensiones from "@/components/modalextensiones/ModalExtensiones"; // 👈 importar
 import Modelos from "@/components/modelos/Modelos";
 import Whyus from "@/components/whyus/Whyus";
 import { useState } from "react";
+import Autopromo from "@/components/autopromo/Autopromo";
+import WhatsappButton from "@/components/whatsappbutton/WhatsappButton";
+import Materiales from "@/components/materiales/Materiales";
 
 export default function Home() {
   const [modalPresupuestoOpen, setModalPresupuestoOpen] = useState(false);
@@ -16,7 +18,7 @@ export default function Home() {
   return (
     <main>
       <header id="header">
-        <Header openModal={() => setModalPresupuestoOpen(true)} />
+        <Header/>
       </header>
 
       <section id="modelos">
@@ -30,15 +32,20 @@ export default function Home() {
         <Galeria />
       </section>
       <section id="materiales">
-        <Materiales />
+        <Materiales/>
       </section>
       <section id="whyus">
         <Whyus />
+      </section>
+      <section >
+        <Autopromo />
       </section>
       <section id="formpresupuesto">
         <FormPresupuesto />
       </section>
 
+      {/* Whatsapp */}
+      <WhatsappButton />
       {/* Modales */}
       <ModalPresupuesto
         isOpen={modalPresupuestoOpen}

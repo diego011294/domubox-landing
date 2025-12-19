@@ -1,17 +1,24 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&family=Playfair+Display:wght@400;700&family=DM+Sans:wght@400;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Utilities para Tailwind */
+@layer utilities {
+  .font-playfair {
+    font-family: var(--font-playfair);
+  }
+  .font-dmsans {
+    font-family: var(--font-dmsans);
+  }
+  .font-lexend {
+    font-family: var(--font-lexend);
+  }
+}
 
 @theme {
-  --font-lexend: "Lexend", sans-serif;
-  --font-playfair: "Playfair Display", serif;
-  --font-dmsans: "DM Sans", sans-serif;
-
   --color-tipo: #333;
   --color-secundario: #94A11A;
   --color-brand: #4f5516;

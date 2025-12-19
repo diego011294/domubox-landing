@@ -8,9 +8,9 @@ export default function Materiales() {
     <div ref={containerRef} className="w-full px-4 py-20">
       <div className="max-w-[1300px] mx-auto">
       {/* TÍTULO */}
-      <h2 className="text-4xl lg:text-5xl text-center font-bold font-dmsans text-tipo w-full opacity-0">
+      <h2 className="text-4xl lg:text-5xl font-medium tracking-tight text-center font-dmsans text-tipo w-full opacity-0">
         Descubre nuestros <br />{" "}
-        <span className="font-playfair text-secundario italic">materiales</span>
+        <span className="font-playfair font-semibold text-secundario italic">materiales</span>
       </h2>
 
       <div className="flex flex-col gap-8 pt-10">
@@ -19,25 +19,19 @@ export default function Materiales() {
           {/* CARD 1 */}
           <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
             <img
-              src="img/suelo-mat.webp"
+              src="img/suelo-mat.png"
               alt="Suelo"
-              className="w-auto sm:w-[40%] h-auto object-fit"
+              className="w-60 sm:w-[40%] h-auto object-contain"
             />
-            <div className="w-full flex flex-col gap-4 p-5">
-              <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <div className="w-full flex flex-col gap-4 p-6">
+              <h3 className="font-dmsans text-lg md:text-2xl font-bold text-tipo">
                 Suelo
               </h3>
-              <ol className="list-decimal list-inside space-y-1 text-tipoclara">
-                <li>Marco de metal</li>
-                <li>Tarima SPC rígida de 8 mm</li>
-                <li>Inyectado de 90mm. Espuma PU a alta presión</li>
-                <li>Armadura de acero</li>
-                <li>Conducto metal KBG para cableado</li>
-                <li>Chapa de acero sellada</li>
-                <li>Flejes de acero</li>
-                <li>
-                  <strong>Grosor total:</strong> 100mm
-                </li>
+              <ol className="list-disc text-sm space-y-1 text-tipoclara">
+                <li>Base ignífuga de magnesio 20 mm</li>
+                <li>Alas laterales bambú 18 mm</li>
+                <li>Pavimento vinílico 2 mm</li>
+                <li>Solidez para una vivienda permanente</li>
               </ol>
             </div>
           </div>
@@ -45,50 +39,40 @@ export default function Materiales() {
           {/* CARD 2 */}
           <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
             <img
-              src="img/techo-mat.webp"
+              src="img/techo-mat.png"
               alt="Suelo"
-              className="w-auto sm:w-[40%] h-auto object-fit"
+              className="w-60 sm:w-[40%] h-auto object-contain"
             />
-            <div className="w-full flex flex-col gap-4 p-5">
-              <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <div className="w-full flex flex-col gap-4 p-6">
+              <h3 className="font-dmsans text-lg md:text-2xl font-bold text-tipo">
                 Techo
               </h3>
-              <ol className="list-decimal list-inside space-y-1 text-tipoclara">
-                <li>Marco de metal</li>
-                <li>Chapa de acero sellada</li>
-                <li>Inyectado de 80mm. Espuma PU a alta presión</li>
-                <li>tablero de fibras de bambú de 9mm</li>
-                <li>Armadura acero</li>
-                <li>Flejes de acero</li>
-                <li>Conducto metal KBG para cableado</li>
-                <li>
-                  <strong>Grosor total:</strong> 90/120mm
-                </li>
+              <ol className="list-disc text-sm space-y-1 text-tipoclara">
+                <li>Chapa ondulada tipo 980</li>
+                <li>Panel integrado grafeno + bambú 50 mm</li>
+                <li>Falso techo interior de fibra de bambú</li>
+                <li>Ideal para climas humedos y costeros</li>
               </ol>
             </div>
           </div>
 
           {/* CARD 3 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA] rounded-md  border border-teal-300 overflow-hidden">
             <img
-              src="img/murosext-mat.webp"
+              src="img/murosext-mat.png"
               alt="Suelo"
-              className="w-auto sm:w-[40%] h-auto object-fit"
+              className="w-60 sm:w-[40%] h-auto object-contain"
             />
-            <div className="w-full flex flex-col gap-4 p-5">
-              <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <div className="w-full flex flex-col gap-4 p-6">
+              <h3 className="font-dmsans text-lg md:text-2xl font-bold text-tipo">
                 Muros exteriores
               </h3>
-              <ol className="list-decimal list-inside space-y-1 text-tipoclara">
-                <li>Marco de metal</li>
-                <li>Conducto metal KBG para cableado</li>
-                <li>Flejes de acero</li>
-                <li>Tablero de fibras de bambú de 9mm</li>
-                <li>Inyectado de 90mm. Espuma PU a alta presión</li>
-                <li>Tablero de lamas metalicas con PU de 27mm</li>
-                <li>
-                  <strong>Grosor total:</strong> 90mm
-                </li>
+              <ol className="list-disc text-sm space-y-1 text-tipoclara">
+                <li>Panel integrado de grafeno + bambú</li>
+                <li>Espesor 65 mm</li>
+                <li>Estructura totalmente galvanizada</li>
+                <li>Cerramiento industrial continuo</li>
+                <li>Tecnología, comfort y durabilidad</li>
               </ol>
             </div>
           </div>
@@ -96,25 +80,19 @@ export default function Materiales() {
           {/* CARD 4 */}
           <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
             <img
-              src="img/murosint-mat.webp"
+              src="img/murosint-mat.png"
               alt="Suelo"
-              className="w-auto sm:w-[40%] h-auto object-fit"
+              className="w-60 sm:w-[40%] h-auto object-contain"
             />
-            <div className="w-full flex flex-col gap-4 p-5">
-              <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <div className="w-full flex flex-col gap-4 p-6">
+              <h3 className="font-dmsans text-lg md:text-2xl font-bold text-tipo">
                 Muros interiores
               </h3>
-              <ol className="list-decimal list-inside space-y-1 text-tipoclara">
-                <li>Armadura de acero</li>
-                <li>Tablero OSB de 9mm</li>
-                <li>Tablero de fibras de bambú de 9mm</li>
-                <li>Conducto metal KBG para cableado</li>
-                <li>50mm de aislante de lana de vidrio</li>
-                <li>Tablero OSB de 9mm</li>
-                <li>Tablero de fibras de bambú de 9mm</li>
-                <li>
-                  <strong>Grosor total:</strong> 85mm
-                </li>
+              <ol className="list-disc text-sm space-y-1 text-tipoclara">
+                <li>Panel integrado de grafeno + fibra de bambú</li>
+                <li>Espesor 50 mm</li>
+                <li>Sistema monolítico (no multicapa OSB/lana)</li>
+                <li>Más moderno, eficiente y con mayor comportamiento térmico real.</li>
               </ol>
             </div>
           </div>

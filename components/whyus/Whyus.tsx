@@ -33,15 +33,15 @@ export default function Whyus() {
   return (
     <div
       ref={containerRef}
-      className="w-full px-4 py-20 mx-auto bg-[radial-gradient(circle,_#FAF4E8_0%,_#F6F4F0_43%,_#DDD2BE_100%)]"
+      className="w-full px-4 py-20 mx-auto bg-[radial-gradient(circle,_#FAF4E8_0%,_#F6F4F0_43%,_#DDD2BE_100%)] font-dmsans"
     >
       <div className="max-w-[1300px] mx-auto">
         {/* TÍTULO */}
         <div className="flex lg:flex-row items-start lg:items-center flex-col justify-between w-full gap-10">
-          <h2 className="text-4xl lg:text-5xl font-bold font-dmsans text-tipo w-full opacity-0">
-            Por qué <br />{" "}
-            <span className="font-playfair text-secundario italic">
-              elegirnos
+          <h2 className="text-4xl lg:text-5xl text-tipo w-full font-medium tracking-tight opacity-0">
+            ¿Por qué <br />{" "}
+            <span className="font-playfair text-secundario italic font-semibold">
+              elegirnos?
             </span>
           </h2>
           <p className="text-md text-tipoclara w-full lg:w-[900px]">
@@ -60,7 +60,7 @@ export default function Whyus() {
           {/* CARD 1 */}
           <div className="card flex flex-col gap-6 min-w-[280px] lg:min-w-0 flex-1 h-96 snap-start border-r border-separator pr-5">
             <img src="img/w1.png" alt="Icono diseño" className="w-24 h-24" />
-            <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <h3 className="font-dmsans text-xl md:text-2xl font-bold text-tipo">
               Diseño Personalizado y Escalable
             </h3>
             <p className="text-md text-tipoclara">
@@ -73,7 +73,7 @@ export default function Whyus() {
           {/* CARD 2 */}
           <div className="card flex flex-col gap-6 min-w-[280px] lg:min-w-0 flex-1 h-96 snap-start border-r border-separator pr-5">
             <img src="img/w2.png" alt="Icono diseño" className="w-24 h-24" />
-            <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <h3 className="font-dmsans text-xl md:text-2xl font-bold text-tipo">
               Calidad en Cada Detalle
             </h3>
             <p className="text-md text-tipoclara">
@@ -86,7 +86,7 @@ export default function Whyus() {
           {/* CARD 3 */}
           <div className="card flex flex-col gap-6 min-w-[280px] lg:min-w-0 flex-1 h-96 snap-start border-r border-separator pr-5">
             <img src="img/w3.png" alt="Icono diseño" className="w-24 h-24" />
-            <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <h3 className="font-smsans text-xl md:text-2xl font-bold text-tipo">
               Rapidez y Eficiencia Constructiva
             </h3>
             <p className="text-md text-tipoclara">
@@ -99,7 +99,7 @@ export default function Whyus() {
           {/* CARD 4 */}
           <div className="card flex flex-col gap-6 min-w-[280px] lg:min-w-0 flex-1 h-96 snap-start pr-5">
             <img src="img/w4.png" alt="Icono diseño" className="w-24 h-24" />
-            <h3 className="font-lexend text-2xl font-bold text-tipo">
+            <h3 className="font-dmsans text-xl md:text-2xl font-bold text-tipo">
               Compromiso con la Sostenibilidad
             </h3>
             <p className="text-md text-tipoclara">

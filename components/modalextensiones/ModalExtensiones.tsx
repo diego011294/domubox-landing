@@ -79,7 +79,7 @@ export default function ModalExtensiones({
       <div
         ref={modalRef}
         className="bg-[radial-gradient(circle,_#FAF4E8_0%,_#F6F4F0_43%,_#DDD2BE_100%)]
-                   rounded-t-2xl w-full md:max-w-5xl shadow-xl cursor-grab active:cursor-grabbing max-h-[90vh] p-4 md:p-6 flex flex-col"
+                    w-full  shadow-xl cursor-grab active:cursor-grabbing max-h-[90vh] p-4 md:p-6 flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Barra de drag */}
@@ -88,28 +88,28 @@ export default function ModalExtensiones({
         {/* Contenido scrollable */}
         <div className="overflow-y-auto flex-1">
           <div className="flex flex-col md:flex-row gap-6 justify-center">
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-2">
+            <div className="bg-white w-full rounded-xl shadow-md p-2 md:flex-col flex text-start md:text-center gap-2">
               <img
                 src="img/extension1.webp"
                 alt="Extension terraza"
-                className="w-32 md:w-full h-auto object-cover mx-auto"
+                className="w-32 h-auto md:w-50 object-contain md:mx-auto"
               />
               <div className="flex flex-col gap-2 md:gap-4 justify-center">
-                <h3 className="text-xl font-bold mb-2 text-tipo">Terraza</h3>
+                <h3 className="text-md md:text-2xl font-bold mb-2 text-tipo">Terraza</h3>
                 <p className="text-sm text-gray-600 mb-4">
                   Una solución sencilla para ampliar tu espacio.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-2">
+            <div className="bg-white w-full rounded-xl shadow-md p-2 md:flex-col flex text-start md:text-center gap-2">
               <img
                 src="img/extension2.webp"
                 alt="Extension terraza"
-                className="w-32 md:w-full h-auto object-cover mx-auto"
+                className="w-32 md:w-50 h-auto object-contain md:mx-auto"
               />
               <div className="flex flex-col gap-2 md:gap-4 justify-center">
-                <h3 className="text-xl font-bold mb-2 text-tipo">
+                <h3 className="text-md md:text-2xl font-bold mb-2 text-tipo">
                   Techo terraza
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
@@ -119,14 +119,14 @@ export default function ModalExtensiones({
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-md p-6 md:flex-col flex text-start md:text-center gap-2">
+            <div className="bg-white w-full rounded-xl shadow-md p-2 md:flex-col flex text-start md:text-center gap-2">
               <img
                 src="img/extension3.webp"
                 alt="Extension terraza"
-                className="w-32 md:w-full h-auto object-cover mx-auto"
+                className="w-32 md:w-50 h-auto object-contain md:mx-auto"
               />
               <div className="flex flex-col gap-2 md:gap-4 justify-center">
-                <h3 className="text-xl font-bold mb-2 text-tipo">Techo</h3>
+                <h3 className="text-md md:text-2xl font-bold mb-2 text-tipo">Techo</h3>
                 <p className="text-sm text-gray-600 mb-4">
                   Tejado a dos aguas que facilita el desagüe y evita
                   acumulaciones de agua o suciedad.

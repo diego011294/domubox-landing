@@ -1,127 +1,177 @@
-"use client";
+"use client"
 
-import { useEffect, useRef, useState } from "react";
-import { Menu, X } from "lucide-react";
-import gsap from "gsap";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react"
+import { Menu, X, Phone, Instagram, Facebook } from "lucide-react"
+import gsap from "gsap"
+import Link from "next/link"
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-  const navRef = useRef<HTMLElement | null>(null);
-  const lastScroll = useRef(0);
+  const [open, setOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
+  const navRef = useRef<HTMLElement | null>(null)
+  const menuRef = useRef<HTMLDivElement | null>(null)
+  const logoRef = useRef<HTMLImageElement | null>(null)
+  const innerRef = useRef<HTMLDivElement | null>(null)
+
+
+  /* Scroll → fondo + estado */
   useEffect(() => {
-    const nav = navRef.current;
-    if (!nav) return;
+    const nav = navRef.current
+    const logo = logoRef.current
+    if (!nav || !logo) return
 
     const handleScroll = () => {
-      const currentScroll = window.scrollY;
+      const scrolled = window.scrollY > 80
+      if (scrolled === isScrolled) return
 
-      if (currentScroll > lastScroll.current && currentScroll > 80) {
-        // scroll hacia abajo → ocultar
-        gsap.to(nav, {
-          y: "-100%",
-          duration: 0.4,
+      setIsScrolled(scrolled)
+
+      // Fondo navbar
+      gsap.to(nav, {
+        backgroundColor: scrolled ? "#F6F4F0" : "transparent",
+        boxShadow: scrolled
+          ? "0 4px 20px rgba(0,0,0,0.05)"
+          : "0 0 0 rgba(0,0,0,0)",
+        duration: 0.35,
+        ease: "power2.out",
+      })
+
+      // 👇 PADDING ANIMADO
+  if (innerRef.current) {
+    gsap.to(innerRef.current, {
+      paddingTop: scrolled ? "1rem" : "2rem",
+      paddingBottom: scrolled ? "1rem" : "2rem",
+      duration: 0.35,
+      ease: "power2.out",
+    })
+  }
+
+      // Logo SOLO DESKTOP
+      if (window.innerWidth >= 768) {
+        gsap.to(logo, {
+          scale: scrolled ? 1 : 1.25,
+          duration: 0.35,
           ease: "power2.out",
-        });
+        })
       } else {
-        // scroll hacia arriba → mostrar
-        gsap.to(nav, {
-          y: "0%",
-          duration: 0.4,
-          ease: "power2.out",
-        });
+        // Móvil: aseguramos escala normal
+        gsap.set(logo, { scale: 1 })
       }
+    }
 
-      lastScroll.current = currentScroll;
-    };
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [isScrolled])
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  /* Menú lateral */
+  useEffect(() => {
+    if (!menuRef.current) return
 
-  // 👇 función para manejar el scroll suave
+    gsap.to(menuRef.current, {
+      x: open ? "0%" : "-100%",
+      duration: open ? 0.6 : 0.45,
+      ease: open ? "power4.out" : "power4.in",
+    })
+  }, [open])
+
   const handleScrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setOpen(false);
-  };
+    setOpen(false)
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+    }, 400)
+  }
 
   return (
-    <nav
-      ref={navRef}
-      className="w-full fixed top-0 left-0 z-50 bg-[#F6F4F0] border-b border-separator"
-    >
-      <div className="max-w-[1300px] px-4 py-2 mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/">
-            <img
-              src="img/logo-domubox.svg"
-              alt="logo domubox"
-              className="w-20 md:w-full"
-            />
-          </Link>
-        </div>
-
-        {/* Links desktop */}
-        <div className="hidden text-lg md:flex space-x-6 text-tipo">
-          <button onClick={() => handleScrollTo("modelos")} className="hover:text-secundario cursor-pointer">
-            Modelos
-          </button>
-          <button onClick={() => handleScrollTo("galeria")} className="hover:text-secundario cursor-pointer">
-            Galería
-          </button>
-          <button onClick={() => handleScrollTo("materiales")} className="hover:text-secundario cursor-pointer">
-            Materiales
-          </button>
-          <button onClick={() => handleScrollTo("whyus")} className="hover:text-secundario cursor-pointer">
-            Por qué elegirnos
-          </button>
-        </div>
-
-        {/* CTA */}
-        <div
-          onClick={() => handleScrollTo("formpresupuesto")}
-          className="hidden lg:block bg-[#4f5516] text-white rounded-sm shadow-xs hover:bg-[#272A0B] text-lg cursor-pointer px-5 py-1"
-        >
-          Solicita presupuesto
-        </div>
-
-        {/* Botón mobile */}
-        <div className="md:hidden">
-          <button
-            onClick={() => setOpen(!open)}
-            className="text-gray-700 hover:text-gray-900 focus:outline-none md:hidden"
-          >
-            {open ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Menú móvil */}
-      <div
+    <>
+      {/* NAVBAR */}
+      <nav
+        ref={navRef}
         className={`
-          text-lg md:hidden bg-[#F6F4F0] shadow-md absolute z-20 w-full px-10 py-5 transition-all duration-300 ease-in-out
-          ${
-            open
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 -translate-y-5 pointer-events-none"
-          }
+          fixed top-0 left-0 w-full z-50
+          ${isScrolled ? "text-black" : "text-white"}
         `}
       >
-        <button onClick={() => handleScrollTo("modelos")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-          Modelos
-        </button>
-        <button onClick={() => handleScrollTo("galeria")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-          Galería
-        </button>
-        <button onClick={() => handleScrollTo("materiales")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-          Materiales
-        </button>
-        <button onClick={() => handleScrollTo("whyus")} className="block px-4 py-2 text-gray-700 hover:bg-gray-100 cursor-pointer">
-          Por qué elegirnos
-        </button>
+        <div 
+        ref={innerRef}
+        className="max-w-[1400px] mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between relative font-dmsans">
+
+          {/* IZQUIERDA */}
+          <button
+            onClick={() => setOpen(true)}
+            className="flex items-center gap-2 uppercase text-xs md:text-sm tracking-wide cursor-pointer"
+          >
+            <Menu size={22} />
+            <span>Menú</span>
+          </button>
+
+          {/* LOGO */}
+          <Link
+            href="/"
+            className="absolute left-1/2 -translate-x-1/2"
+          >
+            <img
+              ref={logoRef}
+              src={
+                isScrolled
+                  ? "/img/logo-domubox.svg"
+                  : "/img/logo-domubox-white.svg"
+              }
+              alt="Domubox"
+              className="
+                w-16 md:w-20
+                transition-transform
+                origin-center
+              "
+            />
+          </Link>
+
+          {/* DERECHA (solo desktop) */}
+          <div className="hidden md:flex items-center gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <Phone size={18} />
+              <span>(+34) 603 894 725</span>
+            </div>
+
+            <button
+              onClick={() => handleScrollTo("formpresupuesto")}
+              className={`
+                px-5 py-2 rounded-sm transition cursor-pointer
+                ${
+                  isScrolled
+                    ? "bg-[#4f5516] text-white hover:bg-[#272A0B]"
+                    : "border border-white text-white hover:bg-white hover:text-black"
+                }
+              `}
+            >
+              Solicita presupuesto
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* SIDE MENU */}
+      <div
+        ref={menuRef}
+        className="fixed top-0 left-0 w-full h-screen bg-[#F6F4F0] z-[999] -translate-x-full text-black font-dmsans"
+      >
+        <div className="flex justify-end items-center px-6 py-4">
+          <button className="cursor-pointer" onClick={() => setOpen(false)}>
+            <X size={28} />
+          </button>
+        </div>
+
+        <div className="h-full flex flex-col justify-center text-start items-start gap-8 px-10 text-3xl md:text-4xl font-medium">
+          <button onClick={() => handleScrollTo("modelos")}>Modelos</button>
+          <button onClick={() => handleScrollTo("galeria")}>Galería</button>
+          <button onClick={() => handleScrollTo("materiales")}>Materiales</button>
+          <button onClick={() => handleScrollTo("whyus")}>Por qué elegirnos</button>
+          <div className="flex gap-2">
+            <a href="https://www.instagram.com/domubox/" target="_blank" rel="noreferrer"><Instagram /></a>
+            <a href="https://www.facebook.com/profile.php?id=61584719714932" target="_blank" rel="noreferrer"><Facebook /></a>
+          </div>
+        </div>
       </div>
-    </nav>
-  );
+    </>
+  )
 }

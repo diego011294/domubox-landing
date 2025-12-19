@@ -16,11 +16,11 @@ export default function FormPresupuesto() {
       className="max-w-[1300px] mx-auto flex flex-col lg:flex-row py-20 lg:py-40 px-4 items-center justify-between gap-20"
     >
       <div className="flex flex-col w-full gap-5">
-        <h2 className="text-4xl lg:text-5xl font-bold font-dmsans text-tipo w-full opacity-0">
+        <h2 className="text-4xl lg:text-5xl font-medium tracking-tight font-dmsans text-tipo w-full opacity-0">
           Diseñamos <br /> tu hogar a{" "}
-          <span className="font-playfair text-secundario italic">medida</span>
+          <span className="font-playfair font-semibold text-secundario italic">medida</span>
         </h2>
-        <p className="text-tipoclara">
+        <p className="text-tipoclara w-full md:w-96">
           Solicita información y descubre cómo podemos crear un espacio único
           para ti, con la calidad y rapidez que nos caracteriza.
         </p>
