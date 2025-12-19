@@ -94,7 +94,7 @@ export default function Navbar() {
       >
         <div 
         ref={innerRef}
-        className="max-w-[1400px] mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between relative font-dmsans">
+        className="w-full mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between relative font-dmsans">
 
           {/* IZQUIERDA */}
           <button

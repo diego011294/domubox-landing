@@ -29,11 +29,11 @@ export default function Modelos({
       name: "01. Canary",
       hasExtensions: true,
       images: [
-        "/img/canary/canary5.jpeg",
-        "/img/canary/canary7.jpeg",
-        "/img/canary/canary2.jpeg",
-        "/img/canary/canary3.jpeg",
-        "/img/canary/canary4.jpeg",
+        "img/canary/canary5.jpeg",
+        "img/canary/canary7.jpeg",
+        "img/canary/canary2.jpeg",
+        "img/canary/canary3.jpeg",
+        "img/canary/canary4.jpeg",
       ],
       accordion: [
         {
@@ -65,7 +65,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="/img/canary/canary1.jpeg"
+                src="img/canary/canary1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -76,11 +76,11 @@ export default function Modelos({
       name: "02. Family",
       hasExtensions: false,
       images: [
-        "/img/family/family1.png",
-        "/img/family/family6.png",
-        "/img/family/family2.png",
-        "/img/family/family3.png",
-        "/img/family/family5.png",
+        "img/family/family1.png",
+        "img/family/family6.png",
+        "img/family/family2.png",
+        "img/family/family3.png",
+        "img/family/family5.png",
       ],
       accordion: [
         {
@@ -104,7 +104,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="/img/family/family4.jpeg"
+                src="img/family/family4.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -115,11 +115,11 @@ export default function Modelos({
       name: "03. Apple",
       hasExtensions: false,
       images: [
-        "/img/apple/apple5.jpeg",
-        "/img/apple/apple6.jpeg",
-        "/img/apple/apple2.jpeg",
-        "/img/apple/apple3.jpeg",
-        "/img/apple/apple4.jpeg",
+        "img/apple/apple5.jpeg",
+        "img/apple/apple6.jpeg",
+        "img/apple/apple2.jpeg",
+        "img/apple/apple3.jpeg",
+        "img/apple/apple4.jpeg",
       ],
       accordion: [
         {
@@ -144,7 +144,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="/img/apple/apple1.jpeg"
+                src="img/apple/apple1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -156,11 +156,11 @@ export default function Modelos({
       name: "04. Nordic",
       hasExtensions: false,
       images: [
-        "/img/nordic/nordic5.jpeg",
-        "/img/nordic/nordic6.jpeg",
-        "/img/nordic/nordic2.jpeg",
-        "/img/nordic/nordic3.jpeg",
-        "/img/nordic/nordic4.jpeg",
+        "img/nordic/nordic5.jpeg",
+        "img/nordic/nordic6.jpeg",
+        "img/nordic/nordic2.jpeg",
+        "img/nordic/nordic3.jpeg",
+        "img/nordic/nordic4.jpeg",
       ],
       accordion: [
         {
@@ -184,7 +184,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="/img/nordic/nordic1.jpeg"
+                src="img/nordic/nordic1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -195,11 +195,11 @@ export default function Modelos({
       name: "05. Capsule",
       hasExtensions: false,
       images: [
-        "/img/capsule/capsule2.png",
-        "/img/capsule/capsule1.jpeg",
-        "/img/capsule/capsule6.jpeg",
-        "/img/capsule/capsule5.png",
-        "/img/capsule/capsule3.png",
+        "img/capsule/capsule2.png",
+        "img/capsule/capsule1.jpeg",
+        "img/capsule/capsule6.jpeg",
+        "img/capsule/capsule5.png",
+        "img/capsule/capsule3.png",
       ],
       accordion: [
         {
@@ -223,7 +223,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="/img/capsule/capsule4.jpeg"
+                src="img/capsule/capsule4.jpeg"
                 alt=""
                 className="w-80"
               />
