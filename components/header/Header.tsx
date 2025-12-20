@@ -22,7 +22,7 @@ export default function Header() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Contenido */}
-      <div className="relative z-10 h-full flex items-end font-dmsans">
+      <div className="relative z-10 pb-10 md:pb-0 h-full flex items-end font-dmsans">
         <div
           ref={containerRef}
           className="px-6 py-6 md:py-16 md:px-16 flex flex-col text-white"
