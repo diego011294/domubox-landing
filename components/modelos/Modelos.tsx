@@ -29,11 +29,11 @@ export default function Modelos({
       name: "01. Canary",
       hasExtensions: true,
       images: [
-        "img/canary/canary5.jpeg",
-        "img/canary/canary7.jpeg",
-        "img/canary/canary2.jpeg",
-        "img/canary/canary3.jpeg",
-        "img/canary/canary4.jpeg",
+        "/img/Canary/canary5.jpeg",
+        "/img/Canary/canary7.jpeg",
+        "/img/Canary/canary2.jpeg",
+        "/img/Canary/canary3.jpeg",
+        "/img/Canary/canary4.jpeg",
       ],
       accordion: [
         {
