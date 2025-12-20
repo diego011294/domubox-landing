@@ -65,7 +65,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="img/canary/canary1.jpeg"
+                src="/img/Canary/canary1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -76,11 +76,11 @@ export default function Modelos({
       name: "02. Family",
       hasExtensions: false,
       images: [
-        "img/family/family1.png",
-        "img/family/family6.png",
-        "img/family/family2.png",
-        "img/family/family3.png",
-        "img/family/family5.png",
+        "/img/Family/family1.png",
+        "/img/Family/family6.png",
+        "/img/Family/family2.png",
+        "/img/Family/family3.png",
+        "/img/Family/family5.png",
       ],
       accordion: [
         {
@@ -104,7 +104,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="img/family/family4.jpeg"
+                src="/img/Family/family4.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -115,11 +115,11 @@ export default function Modelos({
       name: "03. Apple",
       hasExtensions: false,
       images: [
-        "img/apple/apple5.jpeg",
-        "img/apple/apple6.jpeg",
-        "img/apple/apple2.jpeg",
-        "img/apple/apple3.jpeg",
-        "img/apple/apple4.jpeg",
+        "/img/Apple/apple5.jpeg",
+        "/img/Apple/apple6.jpeg",
+        "/img/Apple/apple2.jpeg",
+        "/img/Apple/apple3.jpeg",
+        "/img/Apple/apple4.jpeg",
       ],
       accordion: [
         {
@@ -144,7 +144,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="img/apple/apple1.jpeg"
+                src="/img/Apple/apple1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -156,11 +156,11 @@ export default function Modelos({
       name: "04. Nordic",
       hasExtensions: false,
       images: [
-        "img/nordic/nordic5.jpeg",
-        "img/nordic/nordic6.jpeg",
-        "img/nordic/nordic2.jpeg",
-        "img/nordic/nordic3.jpeg",
-        "img/nordic/nordic4.jpeg",
+        "/img/Nordic/nordic5.jpeg",
+        "/img/Nordic/nordic6.jpeg",
+        "/img/Nordic/nordic2.jpeg",
+        "/img/Nordic/nordic3.jpeg",
+        "/img/Nordic/nordic4.jpeg",
       ],
       accordion: [
         {
@@ -184,7 +184,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="img/nordic/nordic1.jpeg"
+                src="/img/Nordic/nordic1.jpeg"
                 alt=""
                 className="w-80"
               />
@@ -195,11 +195,11 @@ export default function Modelos({
       name: "05. Capsule",
       hasExtensions: false,
       images: [
-        "img/capsule/capsule2.png",
-        "img/capsule/capsule1.jpeg",
-        "img/capsule/capsule6.jpeg",
-        "img/capsule/capsule5.png",
-        "img/capsule/capsule3.png",
+        "/img/Capsule/capsule2.png",
+        "/img/Capsule/capsule1.jpeg",
+        "/img/Capsule/capsule6.jpeg",
+        "/img/Capsule/capsule5.png",
+        "/img/Capsule/capsule3.png",
       ],
       accordion: [
         {
@@ -223,7 +223,7 @@ export default function Modelos({
           title: "Plano de la casa",
           content:
             <img
-                src="img/capsule/capsule4.jpeg"
+                src="/img/Capsule/capsule4.jpeg"
                 alt=""
                 className="w-80"
               />

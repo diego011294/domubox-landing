@@ -5,7 +5,7 @@ export default function Autopromo() {
     const containerRef = useRevealTexts<HTMLDivElement>("h2");
 
   return (
-    <div className="relative bg-[url('/img/autopromo.png')] bg-cover bg-center bg-no-repeat h-[600px]">
+    <div className="relative bg-[url('/img/Autopromo.png')] bg-cover bg-center bg-no-repeat h-[600px]">
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
