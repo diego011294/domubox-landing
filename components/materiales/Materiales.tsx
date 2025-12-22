@@ -10,14 +10,15 @@ export default function Materiales() {
       {/* TÍTULO */}
       <h2 className="text-4xl lg:text-5xl font-medium tracking-tight text-center font-dmsans text-tipo w-full opacity-0">
         Descubre nuestros <br />{" "}
-        <span className="font-playfair font-semibold text-secundario italic">materiales</span>
+        <span className="font-playfair font-semibold text-secundario italic">materiales</span> <br />{" "}
+        <span className="text-lg font-medium tracking-widest"> MODELO CANARY </span>
       </h2>
 
       <div className="flex flex-col gap-8 pt-10">
         {/* Grid de cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-dmsans">
           {/* CARD 1 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
             <img
               src="img/suelo-mat.png"
               alt="Suelo"
@@ -31,13 +32,15 @@ export default function Materiales() {
                 <li>Base ignífuga de magnesio 20 mm</li>
                 <li>Alas laterales bambú 18 mm</li>
                 <li>Pavimento vinílico 2 mm</li>
-                <li>Solidez para una vivienda permanente</li>
+                <div className="bg-[#E4E4D1] text-tipo font-medium rounded-sm p-2 flex items-center gap-2 mt-4">
+                  <span>Solidez para una vivienda permanente</span>
+                </div>
               </ol>
             </div>
           </div>
 
           {/* CARD 2 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
             <img
               src="img/techo-mat.png"
               alt="Suelo"
@@ -51,13 +54,15 @@ export default function Materiales() {
                 <li>Chapa ondulada tipo 980</li>
                 <li>Panel integrado grafeno + bambú 50 mm</li>
                 <li>Falso techo interior de fibra de bambú</li>
-                <li>Ideal para climas humedos y costeros</li>
+                <div className="bg-[#E4E4D1] text-tipo font-medium rounded-sm p-2 flex items-center gap-2 mt-4">
+                  <span>Ideal para climas humedos y costeros</span>
+                </div>
               </ol>
             </div>
           </div>
 
           {/* CARD 3 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA] rounded-md  border border-teal-300 overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3] rounded-md  border border-teal-300 overflow-hidden">
             <img
               src="img/murosext-mat.png"
               alt="Suelo"
@@ -72,13 +77,15 @@ export default function Materiales() {
                 <li>Espesor 65 mm</li>
                 <li>Estructura totalmente galvanizada</li>
                 <li>Cerramiento industrial continuo</li>
-                <li>Tecnología, comfort y durabilidad</li>
+                <div className="bg-[#E4E4D1] text-tipo font-medium rounded-sm p-2 flex items-center gap-2 mt-4">
+                  <span>Tecnología, comfort y durabilidad</span>
+                </div>
               </ol>
             </div>
           </div>
 
           {/* CARD 4 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#FAFAFA]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
             <img
               src="img/murosint-mat.png"
               alt="Suelo"
@@ -92,7 +99,9 @@ export default function Materiales() {
                 <li>Panel integrado de grafeno + fibra de bambú</li>
                 <li>Espesor 50 mm</li>
                 <li>Sistema monolítico (no multicapa OSB/lana)</li>
-                <li>Más moderno, eficiente y con mayor comportamiento térmico real.</li>
+                <div className="bg-[#E4E4D1] text-tipo font-medium rounded-sm p-2 flex items-center gap-2 mt-4">
+                  <span>Más moderno, eficiente y con mayor comportamiento térmico real.</span>
+                </div>
               </ol>
             </div>
           </div>

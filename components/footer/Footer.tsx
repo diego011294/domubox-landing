@@ -7,9 +7,9 @@ export default function Footer() {
         <div className="font-dmsans text-[14px] text-gray-300 flex flex-col-reverse md:flex-row justify-between items-center pt-5 mt-10 border-t-1 md:border-b-1 md:border-t-0 md:mb-5 md:pb-2 gap-5 border-separator w-full">
           <p>&copy; {new Date().getFullYear()} DOMUBOX IMPORT.</p>
           <div className="flex flex-wrap justify-center space-x-5 tracking-widest">
-            <Link href="#">Política de privacidad</Link>
-            <Link href="#">Política de cookies</Link>
-            <Link href="#">Aviso legal</Link>
+            <Link href="/politica-privacidad">Política de privacidad</Link>
+            <Link href="/cookies">Política de cookies</Link>
+            <Link href="/aviso-legal">Aviso legal</Link>
           </div>
         </div>
         <img src="/img/logo-footer.svg" alt="logo domubox" className="w-full" />
