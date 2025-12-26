@@ -10,10 +10,21 @@ import { useState } from "react";
 import Autopromo from "@/components/autopromo/Autopromo";
 import WhatsappButton from "@/components/whatsappbutton/WhatsappButton";
 import Materiales from "@/components/materiales/Materiales";
+import { useEffect } from "react"
+
 
 export default function Home() {
   const [modalPresupuestoOpen, setModalPresupuestoOpen] = useState(false);
   const [modalExtensionesOpen, setModalExtensionesOpen] = useState(false); // 👈 nuevo estado
+
+    useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace("#", "")
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+      }, 200)
+    }
+  }, [])
 
   return (
     <main>

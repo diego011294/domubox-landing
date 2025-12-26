@@ -18,7 +18,7 @@ export default function Materiales() {
         {/* Grid de cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 font-dmsans">
           {/* CARD 1 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3] rounded-md overflow-hidden">
             <img
               src="img/suelo-mat.png"
               alt="Suelo"
@@ -40,7 +40,7 @@ export default function Materiales() {
           </div>
 
           {/* CARD 2 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  rounded-md overflow-hidden">
             <img
               src="img/techo-mat.png"
               alt="Suelo"
@@ -62,7 +62,7 @@ export default function Materiales() {
           </div>
 
           {/* CARD 3 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3] rounded-md  border border-teal-300 overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3] rounded-md overflow-hidden">
             <img
               src="img/murosext-mat.png"
               alt="Suelo"
@@ -85,7 +85,7 @@ export default function Materiales() {
           </div>
 
           {/* CARD 4 */}
-          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  border border-teal-300 rounded-md overflow-hidden">
+          <div className="flex flex-col items-center md:flex-row bg-[#F6F6F3]  rounded-md overflow-hidden">
             <img
               src="img/murosint-mat.png"
               alt="Suelo"

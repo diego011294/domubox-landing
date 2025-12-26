@@ -27,7 +27,7 @@ export default function Header() {
           ref={containerRef}
           className="px-6 py-6 md:py-16 md:px-16 flex flex-col text-white"
         >
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-medium tracking-tighter lg:leading-[100px] opacity-0">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter lg:leading-[100px] opacity-0">
             Casas <br /> <span className="font-playfair italic">modulares</span>
           </h1>
           <span className="text-lg md:text-xl font-light">

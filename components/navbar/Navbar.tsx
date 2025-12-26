@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Menu, X, Phone, Instagram, Facebook } from "lucide-react"
 import gsap from "gsap"
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -13,6 +14,9 @@ export default function Navbar() {
   const innerRef = useRef<HTMLDivElement | null>(null)
   const logoRef = useRef<HTMLImageElement | null>(null)
   const menuRef = useRef<HTMLDivElement | null>(null)
+
+  const pathname = usePathname()
+  const router = useRouter()
 
   /* ================================
      SCROLL BEHAVIOUR (PRO)
@@ -54,17 +58,13 @@ export default function Navbar() {
     }
 
     window.addEventListener("scroll", handleScroll)
-
-    // 🔥 Solo evaluamos, NO animamos desde cero
     handleScroll()
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   /* ================================
-     SIDE MENU
+     SIDE MENU ANIMATION
   ================================= */
   useEffect(() => {
     if (!menuRef.current) return
@@ -76,11 +76,21 @@ export default function Navbar() {
     })
   }, [open])
 
-  const handleScrollTo = (id: string) => {
+  /* ================================
+     NAVIGATION HANDLER
+  ================================= */
+  const handleNavigate = (id: string) => {
     setOpen(false)
-    setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-    }, 400)
+
+    // Si estamos en home → scroll directo
+    if (pathname === "/") {
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+      }, 300)
+    } else {
+      // Si estamos en otra página → volver a home + hash
+      router.push(`/#${id}`)
+    }
   }
 
   return (
@@ -92,7 +102,6 @@ export default function Navbar() {
           isScrolled ? "text-black" : "text-white"
         }`}
       >
-        {/* 👇 ESTADO INICIAL DEFINIDO POR CSS */}
         <div
           ref={innerRef}
           className="
@@ -112,11 +121,7 @@ export default function Navbar() {
           </button>
 
           {/* LOGO */}
-          <Link
-            href="/"
-            className="absolute left-1/2 -translate-x-1/2"
-          >
-            {/* 👇 LOGO GRANDE POR DEFECTO */}
+          <Link href="/" className="absolute left-1/2 -translate-x-1/2">
             <img
               ref={logoRef}
               src={
@@ -125,11 +130,7 @@ export default function Navbar() {
                   : "/img/logo-domubox-white.svg"
               }
               alt="Domubox"
-              className="
-                w-16 md:w-24
-                scale-[1.25]
-                origin-center
-              "
+              className="w-16 md:w-24 scale-[1.25] origin-center"
             />
           </Link>
 
@@ -141,7 +142,7 @@ export default function Navbar() {
             </div>
 
             <button
-              onClick={() => handleScrollTo("formpresupuesto")}
+              onClick={() => handleNavigate("formpresupuesto")}
               className={`px-5 py-2 rounded-sm transition cursor-pointer ${
                 isScrolled
                   ? "bg-[#4f5516] text-white hover:bg-[#272A0B]"
@@ -166,16 +167,26 @@ export default function Navbar() {
         </div>
 
         <div className="h-full flex flex-col justify-center items-start gap-8 px-10 text-3xl md:text-4xl font-medium">
-          <button onClick={() => handleScrollTo("modelos")}>Modelos</button>
-          <button onClick={() => handleScrollTo("galeria")}>Galería</button>
-          <button onClick={() => handleScrollTo("materiales")}>Materiales</button>
-          <button onClick={() => handleScrollTo("whyus")}>Por qué elegirnos</button>
+          <button onClick={() => handleNavigate("modelos")}>Modelos</button>
+          <button onClick={() => handleNavigate("galeria")}>Galería</button>
+          <button onClick={() => handleNavigate("materiales")}>Materiales</button>
+          <button onClick={() => handleNavigate("whyus")}>
+            Por qué elegirnos
+          </button>
 
           <div className="flex gap-4 pt-6">
-            <a href="https://www.instagram.com/domubox/" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/domubox/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Instagram />
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61584719714932" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/profile.php?id=61584719714932"
+              target="_blank"
+              rel="noreferrer"
+            >
               <Facebook />
             </a>
           </div>
