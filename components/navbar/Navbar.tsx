@@ -1,36 +1,36 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Menu, X, Phone, Instagram, Facebook } from "lucide-react"
-import gsap from "gsap"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, Phone, Instagram, Facebook } from "lucide-react";
+import gsap from "gsap";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const navRef = useRef<HTMLElement | null>(null)
-  const innerRef = useRef<HTMLDivElement | null>(null)
-  const logoRef = useRef<HTMLImageElement | null>(null)
-  const menuRef = useRef<HTMLDivElement | null>(null)
+  const navRef = useRef<HTMLElement | null>(null);
+  const innerRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLImageElement | null>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
-  const pathname = usePathname()
-  const router = useRouter()
+  const pathname = usePathname();
+  const router = useRouter();
 
   /* ================================
      SCROLL BEHAVIOUR (PRO)
   ================================= */
   useEffect(() => {
-    const nav = navRef.current
-    const inner = innerRef.current
-    const logo = logoRef.current
+    const nav = navRef.current;
+    const inner = innerRef.current;
+    const logo = logoRef.current;
 
-    if (!nav || !inner || !logo) return
+    if (!nav || !inner || !logo) return;
 
     const handleScroll = () => {
-      const scrolled = window.scrollY > 80
-      setIsScrolled(scrolled)
+      const scrolled = window.scrollY > 80;
+      setIsScrolled(scrolled);
 
       gsap.to(nav, {
         backgroundColor: scrolled ? "#F6F4F0" : "transparent",
@@ -39,59 +39,59 @@ export default function Navbar() {
           : "0 0 0 rgba(0,0,0,0)",
         duration: 0.35,
         ease: "power2.out",
-      })
+      });
 
       gsap.to(inner, {
         paddingTop: scrolled ? "1.2rem" : "2.5rem",
         paddingBottom: scrolled ? "1.2rem" : "2.5rem",
         duration: 0.35,
         ease: "power2.out",
-      })
+      });
 
       if (window.innerWidth >= 768) {
         gsap.to(logo, {
           scale: scrolled ? 1 : 1.25,
           duration: 0.35,
           ease: "power2.out",
-        })
+        });
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    handleScroll()
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   /* ================================
      SIDE MENU ANIMATION
   ================================= */
   useEffect(() => {
-    if (!menuRef.current) return
+    if (!menuRef.current) return;
 
     gsap.to(menuRef.current, {
       x: open ? "0%" : "-100%",
       duration: open ? 0.6 : 0.45,
       ease: open ? "power4.out" : "power4.in",
-    })
-  }, [open])
+    });
+  }, [open]);
 
   /* ================================
      NAVIGATION HANDLER
   ================================= */
   const handleNavigate = (id: string) => {
-    setOpen(false)
+    setOpen(false);
 
     // Si estamos en home → scroll directo
     if (pathname === "/") {
       setTimeout(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-      }, 300)
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 300);
     } else {
       // Si estamos en otra página → volver a home + hash
-      router.push(`/#${id}`)
+      router.push(`/#${id}`);
     }
-  }
+  };
 
   return (
     <>
@@ -136,10 +136,14 @@ export default function Navbar() {
 
           {/* DERECHA */}
           <div className="hidden xl:flex items-center gap-6 text-sm">
-            <div className="flex items-center gap-2">
+            <a
+              href="tel:+34603894725"
+              className="flex items-center gap-2 hover:underline"
+              aria-label="Llamar por teléfono"
+            >
               <Phone size={18} />
               <span>(+34) 603 894 725</span>
-            </div>
+            </a>
 
             <button
               onClick={() => handleNavigate("formpresupuesto")}
@@ -167,10 +171,28 @@ export default function Navbar() {
         </div>
 
         <div className="h-full flex flex-col justify-center items-start gap-8 px-10 text-3xl md:text-4xl font-medium">
-          <button onClick={() => handleNavigate("modelos")}>Modelos</button>
-          <button onClick={() => handleNavigate("galeria")}>Galería</button>
-          <button onClick={() => handleNavigate("materiales")}>Materiales</button>
-          <button onClick={() => handleNavigate("whyus")}>
+          <button
+            className="cursor-pointer"
+            onClick={() => handleNavigate("modelos")}
+          >
+            Modelos
+          </button>
+          <button
+            className="cursor-pointer"
+            onClick={() => handleNavigate("galeria")}
+          >
+            Galería
+          </button>
+          <button
+            className="cursor-pointer"
+            onClick={() => handleNavigate("materiales")}
+          >
+            Materiales
+          </button>
+          <button
+            className="cursor-pointer"
+            onClick={() => handleNavigate("whyus")}
+          >
             Por qué elegirnos
           </button>
 
@@ -193,5 +215,5 @@ export default function Navbar() {
         </div>
       </div>
     </>
-  )
+  );
 }
