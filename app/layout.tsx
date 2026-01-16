@@ -30,6 +30,11 @@ export const metadata: Metadata = {
   verification: {
     google: "VMBDKNiK4nHs5yNxzHQ2E0AN_4QSOr1o9Le5Ut3-cPg",
   },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png", // opcional, si quieres icono Apple
+  },
 };
 
 export default function RootLayout({
@@ -43,7 +48,9 @@ export default function RootLayout({
     <html lang="es"
       className={`${playfair.variable} ${dmSans.variable} ${lexend.variable}`}>
       <head>
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className="bg-white">
         {maintenance ? (
