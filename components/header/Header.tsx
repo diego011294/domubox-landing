@@ -22,12 +22,12 @@ export default function Header() {
       <div className="absolute inset-0 bg-black/50" />
 
       {/* Contenido */}
-      <div className="relative z-10 pb-10 md:pb-0 h-full flex items-end font-dmsans">
+      <div className="relative z-10 pb-10 md:pb-0 h-full flex items-end max-w-[1500px] mx-auto">
         <div
           ref={containerRef}
-          className="px-6 py-6 md:py-16 md:px-16 flex flex-col text-white"
+          className="px-5 py-5 md:py-16 md:px-16 flex flex-col text-white"
         >
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium tracking-tighter lg:leading-[100px] opacity-0">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-lexend font-light tracking-tighter lg:leading-[100px] opacity-0">
             Casas <br /> <span className="font-playfair italic">modulares</span>
           </h1>
           <span className="text-lg md:text-xl font-light">
