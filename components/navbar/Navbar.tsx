@@ -205,7 +205,7 @@ export default function Navbar() {
               <Instagram />
             </a>
             <a
-              href="https://www.facebook.com/profile.php?id=61584719714932"
+              href="https://www.facebook.com/profile.php?id=61585426063415"
               target="_blank"
               rel="noreferrer"
             >
