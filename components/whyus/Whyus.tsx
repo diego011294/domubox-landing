@@ -38,7 +38,7 @@ export default function Whyus() {
       <div className="max-w-[1300px] mx-auto">
         {/* TÍTULO */}
         <div className="flex lg:flex-row items-start lg:items-center flex-col justify-between w-full gap-10">
-          <h2 className="text-4xl lg:text-5xl text-tipo w-full font-medium tracking-tight opacity-0">
+          <h2 className="text-4xl lg:text-5xl text-tipo w-full font-light font-lexend tracking-tight opacity-0">
             ¿Por qué <br />{" "}
             <span className="font-playfair text-secundario italic font-semibold">
               elegirnos?

@@ -78,26 +78,26 @@ export default function ModalPresupuesto({ isOpen, onClose }: ModalPresupuestoPr
             <input
               name="name"
               type="text"
-              placeholder="Nombre completo"
+              placeholder="Nombre completo*"
               className="bg-white p-3 border border-teal-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             />
             <div className="flex flex-col xl:flex-row gap-4 xl:gap-2">
               <input
                 name="phone"
                 type="tel"
-                placeholder="Teléfono"
+                placeholder="Teléfono*"
                 className="bg-white w-full p-3 border border-teal-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
               />
               <input
                 name="email"
                 type="email"
-                placeholder="Email"
+                placeholder="Email*"
                 className="bg-white w-full p-3 border border-teal-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
               />
             </div>
             <textarea
               name="message"
-              placeholder="Mensaje"
+              placeholder="Mensaje*"
               rows={3}
               className="bg-white p-3 border border-teal-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
             />

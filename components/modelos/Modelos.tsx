@@ -260,14 +260,14 @@ export default function Modelos({
         ref={containerRef}
         className="flex lg:flex-row flex-col justify-between gap-10"
       >
-        <h2 className="text-4xl font-medium tracking-tight lg:text-5xl text-tipo opacity-0">
+        <h2 className="text-4xl font-lexend font-light tracking-tight lg:text-5xl text-tipo opacity-0">
           Encuentra tu
           <br />
           <span className="font-playfair font-semibold italic text-secundario">
             modelo ideal
           </span>
         </h2>
-        <p className="text-md text-tipoclara w-full lg:w-[600px]">
+        <p className="text-md text-tipo font-medium w-full lg:w-[600px]">
           Explora nuestra colección de casas modulares y elige el diseño que
           mejor se adapta a tu estilo de vida. Cada modelo está pensado para
           ofrecerte confort, funcionalidad y una estética moderna, con la
@@ -364,13 +364,13 @@ export default function Modelos({
 
             <div className="flex flex-col lg:flex-row gap-4 mt-10">
               <Button className="text-md" onClick={openModal}>
-                ¡Me interesa!
+                Solicita información
               </Button>
               {activeModel.hasExtensions && (
                 <Button
                   onClick={openExtensiones}
                   variant="secondary"
-                  className="bg-[#f0f0f0]"
+                  className="bg-[#f0f0f0] text-sm md:text-md"
                 >
                   Ver extensiones opcionales
                 </Button>
