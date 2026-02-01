@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[url('/img/fondo-footer.webp')] bg-cover bg-center bg-no-repeat text-white py-20 text-center w-full px-4">
+    <footer className="bg-brand text-white py-20 text-center w-full px-4">
       <div className="flex flex-col-reverse md:flex-col justify-center items-center text-sm max-w-[1300px] mx-auto">
         <div className="font-dmsans text-[14px] text-gray-300 flex flex-col-reverse md:flex-row justify-between items-center pt-5 mt-10 border-t-1 md:border-b-1 md:border-t-0 md:mb-5 md:pb-2 gap-5 border-separator w-full">
           <div className="flex flex-col md:flex-row gap-4 pt-6 items-center">

@@ -16,7 +16,7 @@ export default function Autopromo() {
         <h2 className="text-4xl md:text-6xl lg:text-7xl tracking-tight font-light">
           Máxima <span className="font-playfair italic">Eficiencia,</span>
         </h2>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light">
+        <h2 className="text-4xl md:text-6xl lg:text-7xl font-light mb-5">
           Mínimo <span className="font-playfair italic">Impacto</span>
         </h2>
         <span className="text-md md:text-xl font-light max-w-3xl">

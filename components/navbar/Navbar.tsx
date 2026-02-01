@@ -162,7 +162,7 @@ export default function Navbar() {
       {/* SIDE MENU */}
       <div
         ref={menuRef}
-        className="fixed top-0 left-0 w-full h-screen bg-[#F6F4F0] z-[999] -translate-x-full text-black font-dmsans"
+        className="fixed top-0 left-0 w-full h-screen bg-[#F6F4F0] z-[999] -translate-x-full text-black font-lexend"
       >
         <div className="flex justify-end items-center px-6 py-4">
           <button className="cursor-pointer" onClick={() => setOpen(false)}>
@@ -170,7 +170,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="h-full flex flex-col justify-center items-start gap-8 px-10 text-3xl md:text-4xl font-medium">
+        <div className="h-full flex flex-col justify-center items-start gap-8 px-10 text-3xl md:text-4xl">
           <button
             className="cursor-pointer"
             onClick={() => handleNavigate("modelos")}
