@@ -15,7 +15,7 @@ export default function Header() {
         muted
         playsInline
         preload="metadata"
-        poster="/img/postevideo.png"
+        poster="/img/postevideo.webp"
       />
 
       {/* Overlay opcional para mejorar legibilidad */}

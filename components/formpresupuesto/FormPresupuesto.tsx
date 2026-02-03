@@ -25,7 +25,7 @@ export default function FormPresupuesto() {
           para ti, con la calidad y rapidez que nos caracteriza.
         </p>
         <div className="flex flex-col px-0 md:px-5 font-lexend font-semibold">
-        <a href="mailto:info@domuboximport.com?subject=Consulta&body=Hola,%20quiero%20información">info@domuboximport</a>
+        <a href="mailto:info@domuboximport.com?subject=Consulta&body=Hola,%20quiero%20información">info@domuboximport.com</a>
         <a href="mailto:ventasmexico@domuboximport.com?subject=Consulta&body=Hola,%20quiero%20información">ventasmexico@domuboximport.com</a>
         </div>
 
