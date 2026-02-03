@@ -13,7 +13,7 @@ export default function FormPresupuesto() {
   return (
     <div
       ref={containerRef}
-      className="max-w-[1300px] mx-auto flex flex-col lg:flex-row py-20 lg:py-40 px-4 items-center justify-between gap-20"
+      className="max-w-[1300px] mx-auto flex flex-col lg:flex-row py-20 lg:py-40 px-4 items-center justify-between gap-8 md:gap-20"
     >
       <div className="flex flex-col w-full gap-5">
         <h2 className="text-4xl lg:text-5xl font-light tracking-tight font-lexend text-tipo w-full opacity-0">

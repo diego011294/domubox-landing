@@ -294,7 +294,7 @@ export default function Modelos({
         </div>
 
         {/* Galería + Acordeón */}
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-16">
+        <div className="flex flex-col xl:flex-row gap-6 lg:gap-16">
           {/* Galería */}
           <div className="flex flex-col-reverse xl:flex-row gap-4">
             {/* Miniaturas */}
@@ -320,7 +320,7 @@ export default function Modelos({
 
             {/* Imagen principal */}
             <div
-              className="relative w-full lg:w-[600px] h-[300px] md:h-[480px] rounded-md overflow-hidden select-none"
+              className="relative w-full lg:w-full xl:w-[600px] h-[300px] md:h-[480px] rounded-md overflow-hidden select-none"
               onPointerDown={onPointerDown}
               onPointerUp={onPointerUp}
             >
