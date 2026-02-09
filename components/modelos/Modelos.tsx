@@ -9,7 +9,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { useRevealTexts } from "@/hooks/useRevealTexts";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, FileText } from "lucide-react";
 
 export default function Modelos({
   openModal,
@@ -29,7 +29,7 @@ export default function Modelos({
       name: "01. Canary",
       hasExtensions: true,
       images: [
-        "/img/Canary/canary5.jpeg",
+        "/img/Canary/canary11.webp",
         "/img/Canary/canary7.jpeg",
         "/img/Canary/canary2.jpeg",
         "/img/Canary/canary3.jpeg",
@@ -39,36 +39,29 @@ export default function Modelos({
         {
           title: "Descripción",
           content:
-            "La Canary es una solución de vivienda moderna, tipo contenedor desplegable, diseñada para la máxima portabilidad. Con un atractivo acabado exterior que combina paneles de efecto madera rústica y marcos estructurales oscuros, esta casa modular destaca por su amplia fachada acristalada central que asegura luminosidad. Ideal para usos rápidos como cabaña, oficina o alojamiento temporal. La Canary ofrece un montaje sencillo, estética cuidada y la libertad de ser totalmente transportable a cualquier ubicación.",
+            "La Canary es una vivienda modular desplegable que combina diseño contemporáneo, confort y facilidad de instalación. Su sistema plegable permite un transporte eficiente y un rápido montaje, transformándose en un espacio habitable completo en muy poco tiempo. Destaca por su distribución funcional, su alto nivel de aislamiento y sus acabados de calidad, con amplias zonas acristaladas que aportan luminosidad y sensación de amplitud. Es una solución versátil, ideal tanto para uso residencial como para proyectos turísticos, oficinas o alojamientos temporales en cualquier entorno.",
         },
         {
-          title: "Características",
+          title: "Fichas técnicas",
           content: (
-            <ul className="list-disc pl-5 space-y-1">
-              <li>Desplegada (Vivienda): 5.900 × 6.300 × 2.480 mm</li>
-              <li>Plegada (Transporte): 5.900 × 2.200 × 2.480 mm</li>
-              <li>
-                Terraza (Opcional): 6.300 × 2.000 mm (*Ver extensiones
-                opcionales*)
-              </li>
-              <li>37 m2 interiores</li>
-              <li>2–4 Personas</li>
-              <li>
-                2 Dormitorios, 1 baño equipado (separación seca/húmeda), salón y
-                cocina con encimera de mármol. Estructura de acero galvanizado
-                con aislamiento de fibra de bambú y grafeno.
-              </li>
-            </ul>
+            <div className="flex flex-wrap gap-5 p-2 rounded-lg items-center justify-between bg-[#F6F6F3]">
+              <h4 className="text-sm font-semibold text-tipo">
+                Ficha técnica · Canary Luxury
+              </h4>
+
+              <a
+                href="/pdf/Canary/ft-canary-luxury.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit"
+              >
+                <Button variant="default" className="text-sm">
+                  <FileText className="w-4 h-4" />
+                  Ver PDF
+                </Button>
+              </a>
+            </div>
           ),
-        },
-        {
-          title: "Plano de la casa",
-          content:
-            <img
-                src="/img/Canary/canary1.jpeg"
-                alt=""
-                className="w-80"
-              />
         },
       ],
     },
@@ -90,24 +83,20 @@ export default function Modelos({
         },
         {
           title: "Características",
-          content:
+          content: (
             <ul className="list-disc pl-5 space-y-1">
               <li>10.800 × 8.230 × 4.252 mm</li>
               <li>2 habitaciones, salón, cocina ybaño</li>
-              <li>
-                89 m2
-              </li>
+              <li>89 m2</li>
               <li>4 personas</li>
             </ul>
+          ),
         },
         {
           title: "Plano de la casa",
-          content:
-            <img
-                src="/img/Family/family4.jpeg"
-                alt=""
-                className="w-80"
-              />
+          content: (
+            <img src="/img/Family/family4.jpeg" alt="" className="w-80" />
+          ),
         },
       ],
     },
@@ -129,25 +118,19 @@ export default function Modelos({
         },
         {
           title: "Características",
-          content:
+          content: (
             <ul className="list-disc pl-5 space-y-1">
               <li>10.000 × 5.500 × 3.200 mm (cabina + terraza)</li>
               <li>Cabina: 10.000 × 3.500 × 3.200 mm</li>
-              <li>
-                Terraza: 10.000 × 2.000 × 3.200 mm
-              </li>
+              <li>Terraza: 10.000 × 2.000 × 3.200 mm</li>
               <li>55 m2</li>
               <li>4–8 personas</li>
             </ul>
+          ),
         },
         {
           title: "Plano de la casa",
-          content:
-            <img
-                src="/img/Apple/apple1.jpeg"
-                alt=""
-                className="w-80"
-              />
+          content: <img src="/img/Apple/apple1.jpeg" alt="" className="w-80" />,
         },
       ],
     },
@@ -170,24 +153,20 @@ export default function Modelos({
         },
         {
           title: "Características",
-          content:
+          content: (
             <ul className="list-disc pl-5 space-y-1">
               <li>11.000 × 4.800 × 4.500 mm (cabina +terraza)</li>
               <li>1 habitación, salón, cocina y baño</li>
-              <li>
-                52,8 m2
-              </li>
+              <li>52,8 m2</li>
               <li>2 personas</li>
             </ul>
+          ),
         },
         {
           title: "Plano de la casa",
-          content:
-            <img
-                src="/img/Nordic/nordic1.jpeg"
-                alt=""
-                className="w-80"
-              />
+          content: (
+            <img src="/img/Nordic/nordic1.jpeg" alt="" className="w-80" />
+          ),
         },
       ],
     },
@@ -209,24 +188,20 @@ export default function Modelos({
         },
         {
           title: "Características",
-          content:
+          content: (
             <ul className="list-disc pl-5 space-y-1">
               <li>11.500 × 3.300 × 3.300 mm</li>
               <li>Consumo máximo de energía: 12 kW</li>
-              <li>
-                55 m2
-              </li>
+              <li>55 m2</li>
               <li>4–8 personas</li>
             </ul>
+          ),
         },
         {
           title: "Plano de la casa",
-          content:
-            <img
-                src="/img/Capsule/capsule4.jpeg"
-                alt=""
-                className="w-80"
-              />
+          content: (
+            <img src="/img/Capsule/capsule4.jpeg" alt="" className="w-80" />
+          ),
         },
       ],
     },
