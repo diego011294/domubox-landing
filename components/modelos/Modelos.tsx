@@ -39,7 +39,7 @@ export default function Modelos({
         {
           title: "Descripción",
           content:
-            "La Canary e una vivienda modular desplegable que combina diseño contemporáneo, confort y facilidad de instalación. Su sistema plegable permite un transporte eficiente y un rápido montaje, transformándose en un espacio habitable completo en muy poco tiempo. Destaca por su distribución funcional, su alto nivel de aislamiento y sus acabados de calidad, con amplias zonas acristaladas que aportan luminosidad y sensación de amplitud. Es una solución versátil, ideal tanto para uso residencial como para proyectos turísticos, oficinas o alojamientos temporales en cualquier entorno.",
+            "La Canary es una vivienda modular desplegable que combina diseño contemporáneo, confort y facilidad de instalación. Su sistema plegable permite un transporte eficiente y un rápido montaje, transformándose en un espacio habitable completo en muy poco tiempo. Destaca por su distribución funcional, su alto nivel de aislamiento y sus acabados de calidad, con amplias zonas acristaladas que aportan luminosidad y sensación de amplitud. Es una solución versátil, ideal tanto para uso residencial como para proyectos turísticos, oficinas o alojamientos temporales en cualquier entorno.",
         },
         {
           title: "Fichas técnicas",
