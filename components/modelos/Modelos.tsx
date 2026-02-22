@@ -43,25 +43,20 @@ export default function Modelos({
         },
         {
           title: "Fichas técnicas",
-          content: (
-            <div className="flex flex-wrap gap-5 p-2 rounded-lg items-center justify-between bg-[#F6F6F3]">
-              <h4 className="text-sm font-semibold text-tipo">
-                Ficha técnica · Canary Luxury
-              </h4>
-
-              <a
-                href="/pdf/Canary/ft-canary-luxury.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-fit"
-              >
-                <Button variant="default" className="text-sm">
-                  <FileText className="w-4 h-4" />
-                  Ver PDF
-                </Button>
-              </a>
-            </div>
-          ),
+          fichas: [
+            {
+              name: "Canary Luxury 37m²",
+              url: "/pdf/Canary/ft-canary-luxury-37.pdf",
+            },
+            {
+              name: "Canary Luxury 56m²",
+              url: "/pdf/Canary/ft-canary-luxury-56.pdf",
+            },
+            {
+              name: "Canary Luxury 72m²",
+              url: "/pdf/Canary/ft-canary-luxury-72.pdf",
+            },
+          ],
         },
       ],
     },
@@ -331,7 +326,35 @@ export default function Modelos({
                     {item.title}
                   </AccordionTrigger>
                   <AccordionContent className="text-tipoclara">
-                    {item.content}
+                    {/* Si tiene fichas técnicas */}
+                    {"fichas" in item && item.fichas ? (
+                      <div className="flex flex-col gap-4">
+                        {item.fichas.map((ficha, i) => (
+                          <div
+                            key={i}
+                            className="flex flex-wrap gap-5 p-4 rounded-lg items-center justify-between bg-[#F6F6F3]"
+                          >
+                            <h4 className="text-sm font-semibold text-tipo">
+                              Ficha técnica · {ficha.name}
+                            </h4>
+
+                            <a
+                              href={ficha.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="w-fit"
+                            >
+                              <Button variant="default" className="text-sm">
+                                <FileText className="w-4 h-4 mr-2" />
+                                Ver PDF
+                              </Button>
+                            </a>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      item.content
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
