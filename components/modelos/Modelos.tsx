@@ -46,15 +46,15 @@ export default function Modelos({
           fichas: [
             {
               name: "Canary Luxury 37m²",
-              url: "/pdf/Canary/ft-canary-luxury-37.pdf",
+              url: "/pdf/canary/ft-canary-luxury-37.pdf",
             },
             {
               name: "Canary Luxury 56m²",
-              url: "/pdf/Canary/ft-canary-luxury-56.pdf",
+              url: "/pdf/canary/ft-canary-luxury-56.pdf",
             },
             {
               name: "Canary Luxury 72m²",
-              url: "/pdf/Canary/ft-canary-luxury-72.pdf",
+              url: "/pdf/canary/ft-canary-luxury-72.pdf",
             },
           ],
         },
@@ -77,21 +77,13 @@ export default function Modelos({
             "Esta casa modular adaptable ofrece un diseño tradicional y acogedor. El modelo destaca por su tejado a dos aguas y su gran puerta corrediza de cristal central, que facilita la conexión con el entorno. Incluye un espacio exterior cubierto (pérgola o porche), perfecto para el esparcimiento al aire libre. Es la opción ideal para quienes buscan la rapidez de la construcción modular con el aspecto atemporal de una vivienda familiar permanente.",
         },
         {
-          title: "Características",
-          content: (
-            <ul className="list-disc pl-5 space-y-1">
-              <li>10.800 × 8.230 × 4.252 mm</li>
-              <li>2 habitaciones, salón, cocina ybaño</li>
-              <li>89 m2</li>
-              <li>4 personas</li>
-            </ul>
-          ),
-        },
-        {
-          title: "Plano de la casa",
-          content: (
-            <img src="/img/Family/family4.jpeg" alt="" className="w-80" />
-          ),
+          title: "Fichas técnicas",
+          fichas: [
+            {
+              name: "Family",
+              url: "/pdf/family/ft-family.pdf",
+            }
+          ],
         },
       ],
     },
@@ -147,21 +139,13 @@ export default function Modelos({
             "El modelo Nordic presenta un diseño modular minimalista con un imponente tejado a dos aguas que se integra en una fachada de cristal de doble altura, garantizando vistas espectaculares. Su revestimiento en chapa metálica oscura aporta una estética moderna, industrial y escandinava.",
         },
         {
-          title: "Características",
-          content: (
-            <ul className="list-disc pl-5 space-y-1">
-              <li>11.000 × 4.800 × 4.500 mm (cabina +terraza)</li>
-              <li>1 habitación, salón, cocina y baño</li>
-              <li>52,8 m2</li>
-              <li>2 personas</li>
-            </ul>
-          ),
-        },
-        {
-          title: "Plano de la casa",
-          content: (
-            <img src="/img/Nordic/nordic1.jpeg" alt="" className="w-80" />
-          ),
+          title: "Fichas técnicas",
+          fichas: [
+            {
+              name: "Nordic",
+              url: "/pdf/nordic/ft-nordic.pdf",
+            }
+          ],
         },
       ],
     },
