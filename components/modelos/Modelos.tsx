@@ -303,7 +303,7 @@ export default function Modelos({
 
           {/* Acordeón */}
           <div className="flex-1">
-            <Accordion type="single" collapsible defaultValue="item-0">
+            <Accordion type="multiple" defaultValue={["item-0", "item-1"]}>
               {activeModel.accordion.map((item, idx) => (
                 <AccordionItem key={idx} value={`item-${idx}`}>
                   <AccordionTrigger className="text-lg font-bold">
