@@ -46,15 +46,15 @@ export default function Modelos({
           fichas: [
             {
               name: "Canary Luxury 37m²",
-              url: "/pdf/canary/ft-canary-luxury-37.pdf",
+              url: "/pdf/canary-luxury/ft-canary-37.pdf",
             },
             {
               name: "Canary Luxury 56m²",
-              url: "/pdf/canary/ft-canary-luxury-56.pdf",
+              url: "/pdf/canary-luxury/ft-canary-56.pdf",
             },
             {
               name: "Canary Luxury 72m²",
-              url: "/pdf/canary/ft-canary-luxury-72.pdf",
+              url: "/pdf/canary-luxury/ft-canary-72.pdf",
             },
           ],
         },
@@ -74,7 +74,7 @@ export default function Modelos({
         {
           title: "Descripción",
           content:
-            "Esta csa modular adaptable ofrece un diseño tradicional y acogedor. El modelo destaca por su tejado a dos aguas y su gran puerta corrediza de cristal central, que facilita la conexión con el entorno. Incluye un espacio exterior cubierto (pérgola o porche), perfecto para el esparcimiento al aire libre. Es la opción ideal para quienes buscan la rapidez de la construcción modular con el aspecto atemporal de una vivienda familiar permanente.",
+            "Esta casa modular adaptable ofrece un diseño tradicional y acogedor. El modelo destaca por su tejado a dos aguas y su gran puerta corrediza de cristal central, que facilita la conexión con el entorno. Incluye un espacio exterior cubierto (pérgola o porche), perfecto para el esparcimiento al aire libre. Es la opción ideal para quienes buscan la rapidez de la construcción modular con el aspecto atemporal de una vivienda familiar permanente.",
         },
         {
           title: "Fichas técnicas",
